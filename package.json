@@ -1,0 +1,34 @@
+{
+  "name": "musicplayer",
+  "productName" : "Music Player",
+  "version": "1.0.0",
+  "description": "This is a music player app",
+  "main": "./main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-installer": "electron-builder"
+  },
+  "build": {
+    "appId": "Music Player",
+    "win" : {
+      "target": ["nsis"],
+      "icon": "icons/play.ico"
+    },
+    "nsis": {
+      "installerIcon": "icons/play.ico",
+      "uninstallerIcon": "icons/play.ico",
+      "uninstallDisplayName": "Music Player",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "author": "Yuhong Li",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.2.0",
+    "electron-builder": "^23.6.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.9"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Music Player</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <div class="box blue full-height">
+            <div class="row header dark-grey">
+                <div class="sixty-height white-text text" style="font-size: 3rem;"> Library </div>
+                <div class="full-height upload-container" style="font-size: 1.5em; width: 15%;">
+                    <button class="upload-button" id="upload-button">Upload Song</button>
+                </div>
+            </div>
+            <div class="row content grey music-list" id="musiclist"></div>
+            <div class="row bottom dark-grey">
+                <div class="play">
+                    <div class="play-button flex-fill">
+                        <button class="play-button-image" id="pauseButton"></button>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="music-info lighter-black flex-fill" id="musicinfo">
+                        <div class="current-song-info white-text">
+                            <div class="current-name transparent text text-overflow" id="songName"></div>
+                            <div class="prog-bar-container white" id="prog-bar-container">
+                                <div class="prog-bar-fill green" id="prog-bar-fill"></div>
+                            </div>
+                            <div class="current-timer transparent text" id="songTimer"></div>
+                        </div>
+                        <div class="centered sliderContainer" id="volumeSlider">
+                            <input class="nofocus" type="range" min="0" max="100" value="50" id="volume">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio id="audioplayer"></audio>
+    </body>
+    <script src="./src/upload.js" type="module"></script>
+    <script src="./src/song.js" type="module"></script>
+    <script src="./src/library.js" type="module"></script>
+</html>
